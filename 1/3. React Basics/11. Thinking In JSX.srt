@@ -1,0 +1,271 @@
+1
+00:00:00,820 --> 00:00:02,300
+Hey there it's Andre here.
+
+2
+00:00:02,340 --> 00:00:07,140
+Wanted to add a quick note a few things that you may have been confused about.
+
+3
+00:00:07,180 --> 00:00:14,590
+You may be asking why we changed this from a function to a class and older versions of create react
+
+4
+00:00:14,590 --> 00:00:18,520
+app actually started the app with a class instead of a function.
+
+5
+00:00:18,520 --> 00:00:23,620
+Now this topic of classes versus functions is something that we're going to cover more and more in-depth
+
+6
+00:00:23,680 --> 00:00:30,330
+as we get through the course and especially towards the end when we talk about react hooks now to go
+
+7
+00:00:30,330 --> 00:00:31,080
+through with this code.
+
+8
+00:00:31,080 --> 00:00:33,270
+We need to understand a few things.
+
+9
+00:00:33,450 --> 00:00:40,700
+The very first thing is that this syntax of jazz sex which we're going to talk a little bit more about.
+
+10
+00:00:40,860 --> 00:00:45,050
+But for now it looks like everything is just an 80 mile tack.
+
+11
+00:00:45,270 --> 00:00:51,230
+However because this is javascript there's a few changes.
+
+12
+00:00:51,240 --> 00:00:56,340
+One is that this class name over here that's not a shemale is it.
+
+13
+00:00:56,340 --> 00:01:00,500
+And if I hover over this you see that it's a j a sex attribute.
+
+14
+00:01:02,040 --> 00:01:09,850
+You see because if I used the word class in here class means something else in JavaScript it means well
+
+15
+00:01:09,910 --> 00:01:12,300
+we're creating a class right.
+
+16
+00:01:12,640 --> 00:01:19,840
+So Jeff Sachs uses the syntax of class name to distinguish between what we actually mean which is the
+
+17
+00:01:20,410 --> 00:01:26,800
+actually giving it an ACM all class vs. a class in JavaScript.
+
+18
+00:01:27,050 --> 00:01:27,910
+The other thing.
+
+19
+00:01:27,920 --> 00:01:30,800
+Are these brackets over here.
+
+20
+00:01:30,920 --> 00:01:42,580
+You see how every time we write these curly brackets inside of our JSA X well they mean inside of here.
+
+21
+00:01:42,660 --> 00:01:48,910
+Anytime you see these curly brackets whatever's inside is a javascript expression.
+
+22
+00:01:49,040 --> 00:01:50,030
+So what does that mean.
+
+23
+00:01:50,030 --> 00:01:55,610
+Well logo is a variable which is the logo that we import.
+
+24
+00:01:55,730 --> 00:01:57,930
+This dot state DOT string.
+
+25
+00:01:58,280 --> 00:02:02,540
+Well that's also a variable which is referring to this state.
+
+26
+00:02:02,540 --> 00:02:05,970
+It's a javascript expression it's something that produces a value.
+
+27
+00:02:06,050 --> 00:02:12,290
+For example I could have done four plus five here if I wanted to because it's a javascript expression
+
+28
+00:02:13,500 --> 00:02:19,560
+another place that we see this is right here with the on click again anything around these brackets
+
+29
+00:02:19,590 --> 00:02:21,750
+is a javascript expression.
+
+30
+00:02:21,780 --> 00:02:23,500
+So what's in here.
+
+31
+00:02:23,530 --> 00:02:24,990
+There's a function right.
+
+32
+00:02:25,110 --> 00:02:34,640
+An anonymous function using this arrow syntax that simply calls this dot set state now.
+
+33
+00:02:34,660 --> 00:02:42,610
+Notice here how we don't actually modify this dot set state like this.
+
+34
+00:02:42,610 --> 00:02:53,300
+This dot state DOT string to equal something else like we would normally and this goes back to the idea
+
+35
+00:02:53,330 --> 00:02:59,390
+that I mentioned previously which is this unique directional data flow of react.
+
+36
+00:02:59,390 --> 00:03:07,100
+You see you're not allowed to modify state in react without calling this method set state.
+
+37
+00:03:07,100 --> 00:03:15,900
+Now why is that because any time we change the state let's say a user clicks that button to change the
+
+38
+00:03:15,960 --> 00:03:18,510
+state to a new string.
+
+39
+00:03:18,510 --> 00:03:22,720
+When that click happens what happens is react actually.
+
+40
+00:03:22,790 --> 00:03:26,560
+Intercept because remember react as the one that's talking to the DOM.
+
+41
+00:03:26,670 --> 00:03:32,380
+It's going to intercept that click and it's going to report back and say Hey I got to click on the Dom.
+
+42
+00:03:32,430 --> 00:03:33,430
+What do I do.
+
+43
+00:03:33,480 --> 00:03:40,260
+Well in this case what we're going to say is on click when the click happens I want you to update the
+
+44
+00:03:40,260 --> 00:03:44,300
+state but we're not going to modify the state automatically.
+
+45
+00:03:44,370 --> 00:03:46,830
+I'm going to say hey a click happened.
+
+46
+00:03:46,830 --> 00:03:54,240
+State gets updated using set state and then that change is going to re render the components so that
+
+47
+00:03:54,240 --> 00:04:01,410
+we can go through this flow again again if we look over here as soon as this set state gets called which
+
+48
+00:04:01,410 --> 00:04:04,090
+is when a click happens.
+
+49
+00:04:04,170 --> 00:04:09,870
+Well what's going to happen this render method gets called again.
+
+50
+00:04:10,020 --> 00:04:11,160
+Why does it get called.
+
+51
+00:04:11,160 --> 00:04:16,070
+Well because state just got updated state now is a different thing.
+
+52
+00:04:16,110 --> 00:04:23,940
+And remember the declarative approach with react is that as soon as state changes we re render the component
+
+53
+00:04:24,450 --> 00:04:30,170
+with the new state which is right here and we display that.
+
+54
+00:04:30,240 --> 00:04:32,970
+Now this on click is that HMO.
+
+55
+00:04:32,970 --> 00:04:37,380
+Well if I hover over here it says no that's a J sex attribute.
+
+56
+00:04:37,380 --> 00:04:39,540
+Again remember this isn't HMO.
+
+57
+00:04:39,570 --> 00:04:40,700
+This is javascript.
+
+58
+00:04:40,710 --> 00:04:42,590
+We're just mimicking HMO.
+
+59
+00:04:42,630 --> 00:04:53,160
+So if I wanted to say use on click an HMO you see that on click is run like this with no capital C because
+
+60
+00:04:53,160 --> 00:04:56,280
+in JavaScript we use camel case.
+
+61
+00:04:56,280 --> 00:04:57,720
+It's a capital C..
+
+62
+00:04:57,840 --> 00:05:04,830
+So just like Kos name was a little bit different than HMO on click is also different.
+
+63
+00:05:04,850 --> 00:05:09,230
+So in react we can use whatever HMO attributes that we want.
+
+64
+00:05:09,230 --> 00:05:16,480
+Like source like class like on click but sometimes there's these differences like class name or on click.
+
+65
+00:05:16,490 --> 00:05:20,440
+Now we're going to explore these different attributes throughout the course.
+
+66
+00:05:20,810 --> 00:05:27,170
+But the key thing to remember is that Jeff Sachs is trying to mimic what HMO does.
+
+67
+00:05:27,170 --> 00:05:34,940
+So with that we can create that virtual Dawn and breakdown each part of the app into these components
+
+68
+00:05:35,000 --> 00:05:42,970
+that keep getting re rendered as we update the state using said state let's keep going.
